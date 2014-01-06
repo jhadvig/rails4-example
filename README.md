@@ -88,19 +88,16 @@ in production.
     rhc app create -a railsapp -t ruby-1.9
     ```
 
-   **Note:** To support Ruby 1.8,
+   **Note:** Ruby 1.8 is unsupported prior to Rails 4
+
+   Alternatively you can create your application using following one-liner and
+   skip the next 3 steps.
+
    ```
-   +++ config/initializers/wrap_parameters.rb
-   @@ -5,7 +5,7 @@
-    
-     # Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
-      ActiveSupport.on_load(:action_controller) do
-      -  wrap_parameters format: [:json]
-      +  wrap_parameters ({:format => [:json]})
-       end
-  ```
+   rhc app create railsapp ruby-1.9 mysql-5.5 --from-code=https://github.com/mfojtik/rails4-example
+   ```
 
-
+   To use postgresql database, change the mysql-5.5 to postgresql-9.2
 
 1. Add database support to your application
 
@@ -114,7 +111,7 @@ in production.
     rhc cartridge add -a railsapp -c postgresql-9.2
     ```
 
-1. Add this upstream Rails quickstart repository
+2. Add this upstream Rails quickstart repository
 
     ```
     cd railsapp
@@ -122,13 +119,13 @@ in production.
     git pull -s recursive -X theirs upstream master
     ```
 
-1. Push your new code
+3. Push your new code
 
     ```
     git push
     ```
 
-1. That's it! Enjoy your new Rails application!
+4. That's it! Enjoy your new Rails application!
 
 
 [template]: https://openshift.redhat.com/app/console/application_types/rails

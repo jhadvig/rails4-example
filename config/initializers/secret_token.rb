@@ -6,7 +6,10 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 # You can use `rake secret` to generate a secure secret key.
-
-# Make sure your secret_key_base is kept private
-# if you're sharing your code publicly.
-RailsApp::Application.config.secret_key_base = 'ca8ccc4699302e35cff477941148c7497aa59fa16e5c32a0635b17622b856d6197c3d0d6baf8af56631a8568654d436ecc274b8bbe660d8b4296b379cc1957b7'
+#
+require File.join(Rails.root,'lib','openshift_secret_generator.rb')
+#
+RailsApp::Application.config.secret_token = initialize_secret(
+  :token,
+  '335a4e365ef2daeea969640d74e18f0e3cd9fae1abd8f4125691a880774ea6d456a29c0831aa6921bf86a710fe555e916f0673f5657619ec9df22e0409bec345'
+)
