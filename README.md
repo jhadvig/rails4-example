@@ -1,9 +1,15 @@
-# Rails Sample App on OpenShift #
+# Rails 4 Sample App on OpenShift #
 Quickstart rails application for openshift.
 
 The easiest way to install this application is to use the [OpenShift
 Instant Application][template]. If you'd like to install it
 manually, follow [these directions](#manual-installation).
+
+**Note:** This quickstart is based on [Rails 3](https://github.com/openshift/rails-example) quickstart with backported
+token generator. Rails 3 is currently the officially supported quickstart in
+OpenShift, so consider this quickstart as experimental for now.
+
+**Note:** Prior to Rails 4, Ruby 1.8 and below are not supported.
 
 ## OpenShift Considerations ##
 These are some special considerations you may need to keep in mind when
