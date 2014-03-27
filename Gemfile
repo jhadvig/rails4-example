@@ -38,6 +38,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'spork', :github => 'sporkrb/spork'
+gem 'spork-rails', :github => 'sporkrb/spork-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
